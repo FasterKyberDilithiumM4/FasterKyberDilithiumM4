@@ -16,18 +16,18 @@ Detailed instructions on interacting with the hardware and on installing require
 - `common`: contains code that is shared between different schemes
 - `config.py`: Saves platform configuration
 - `crypto_kem`: contains the implementations for kyber512, kyber768, kyber1024
-    - `kyber512`
+    - `kyber512(-90s)`
         - `old`: Code from the implementation in pqm4
         - `new`: Code containing all of our proposals
         - `newstack`: Code containing only optimizations that do not require additional stack usage
-    - `kyber768`
+    - `kyber768(-90s)`
         - `old`: Code from the implementation in pqm4
         - `new`: Code containing all of our proposals
         - `newstack`: Code containing only optimizations that do not require additional stack usage
-    - `kyber1024`
+    - `kyber1024(-90s)`
         - `old`: Code from the implementation in pqm4
         - `new`: Code containing all of our proposals
-        - `newstack`: Code containing only optimizations that do not require 
+        - `newstack`: Code containing only optimizations that do not require additional stack usage
     - `f_speed.c`: Firmware used for benchmarking parts of the scheme. Can be used by using `f_benchmarks.py`.
     - `speed.c`: From pqm4; Firmware for benchmarking the schemes' cycle counts. Can be used by using `benchmarks.py`.
     - `stack.c`: From pqm4; Firmware for benchmarking the schemes' stack usage. 
