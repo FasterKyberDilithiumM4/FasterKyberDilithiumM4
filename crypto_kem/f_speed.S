@@ -25,7 +25,7 @@ pop {r0-r11, pc}
 .align 2
 doublebasemul_asm_cache_16_32_wrapper:
 push {r0-r11, r14}
-vmov s21, r0
+vmov s11, r0
 doublebasemul_asm_cache_16_32 r0, r0, r0, r0, r4, r5, r6, r7, r8, r9, r10, r11, r12, r0, r14
 pop {r0-r11, pc}
 .size doublebasemul_asm_cache_16_32_wrapper, . - doublebasemul_asm_cache_16_32_wrapper
@@ -35,7 +35,7 @@ pop {r0-r11, pc}
 .align 2
 doublebasemul_asm_acc_cache_32_32_wrapper:
 push {r0-r11, r14}
-vmov s21, r0
+vmov s11, r0
 doublebasemul_asm_acc_cache_32_32 r0, r0, r0, r0, r4, r5, r6, r7, r8, r9, r10, r11, r12, r0, r14
 pop {r0-r11, pc}
 .size doublebasemul_asm_acc_cache_32_32_wrapper, . - doublebasemul_asm_acc_cache_32_32_wrapper
@@ -45,8 +45,8 @@ pop {r0-r11, pc}
 .align 2
 doublebasemul_asm_acc_cache_32_16_wrapper:
 push {r0-r11, r14}
-vmov s21, r0
-vmov s22, r0
+vmov s11, r0
+vmov s12, r0
 doublebasemul_asm_acc_cache_32_16 r0, r0, r0, r0, r4, r5, r6, r7, r8, r9, r10, r11, r12, r0, r14
 pop {r0-r11, pc}
 .size doublebasemul_asm_acc_cache_32_16_wrapper, . - doublebasemul_asm_acc_cache_32_16_wrapper
@@ -57,7 +57,7 @@ pop {r0-r11, pc}
 .align 2
 doublebasemul_asm_opt_16_32_wrapper:
 push {r0-r11, r14}
-vmov s21, r0
+vmov s11, r0
 doublebasemul_asm_opt_16_32 r0, r0, r0, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r0, r14
 pop {r0-r11, pc}
 .size doublebasemul_asm_opt_16_32_wrapper, . - doublebasemul_asm_opt_16_32_wrapper
@@ -67,7 +67,7 @@ pop {r0-r11, pc}
 .align 2
 doublebasemul_asm_acc_opt_32_32_wrapper:
 push {r0-r11, r14}
-vmov s21, r0
+vmov s11, r0
 doublebasemul_asm_acc_opt_32_32 r0, r0, r0, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r0, r14
 pop {r0-r11, pc}
 .size doublebasemul_asm_acc_opt_32_32_wrapper, . - doublebasemul_asm_acc_opt_32_32_wrapper
@@ -77,7 +77,7 @@ pop {r0-r11, pc}
 .align 2
 doublebasemul_asm_acc_opt_32_16_wrapper:
 push {r0-r11, r14}
-vmov s21, r0
+vmov s11, r0
 doublebasemul_asm_acc_opt_32_16 r0, r0, r0, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r0, r14
 pop {r0-r11, pc}
 .size doublebasemul_asm_acc_opt_32_16_wrapper, . - doublebasemul_asm_acc_opt_32_16_wrapper
