@@ -1,1 +1,1 @@
-../new/fastinvntt.S
+../../kyber768/newstack/fastinvntt.S
