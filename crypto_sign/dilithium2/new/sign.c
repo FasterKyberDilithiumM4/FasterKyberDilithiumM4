@@ -278,7 +278,7 @@ int crypto_sign_verify(const uint8_t *sig,
   uint8_t mu[CRHBYTES];
   uint8_t c2[SEEDBYTES];
   polyvecl z;
-  poly c, chat, w1_elem, tmp_elem;
+  poly c, w1_elem, tmp_elem;
   shake256incctx state;
 
   if(siglen != CRYPTO_BYTES)
@@ -297,10 +297,11 @@ int crypto_sign_verify(const uint8_t *sig,
   shake256_inc_absorb(&state, mu, CRHBYTES);
 
   poly_challenge(&c, sig);
-  chat = c;
-  poly_ntt(&chat);
+  poly_ntt(&c);
 
-  unpack_sig_z(&z, sig);
+  if (unpack_sig_z(&z, sig) != 0) {
+    return -1;
+  };
   if (polyvecl_chknorm(&z, GAMMA1 - BETA)) {
     return -1;
   }
@@ -318,12 +319,12 @@ int crypto_sign_verify(const uint8_t *sig,
       poly_pointwise_acc_montgomery(&w1_elem, &tmp_elem, &z.vec[j]);
     }
 
-    // Subtract c*(t1_{k_idx} * 2^d)
+    // Subtract c*(t1_{i} * 2^d)
     unpack_pk_t1(&tmp_elem, i, pk);
     poly_shiftl(&tmp_elem);
     poly_ntt(&tmp_elem);
 
-    poly_pointwise_montgomery(&tmp_elem, &chat, &tmp_elem);
+    poly_pointwise_montgomery(&tmp_elem, &c, &tmp_elem);
 
     poly_sub(&w1_elem, &w1_elem, &tmp_elem);
     poly_reduce(&w1_elem);

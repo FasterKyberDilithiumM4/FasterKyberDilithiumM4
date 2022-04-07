@@ -76,7 +76,7 @@ void unpack_sk(uint8_t rho[SEEDBYTES],
 int unpack_sig(uint8_t c[SEEDBYTES], polyvecl *z, polyveck *h, const uint8_t sig[CRYPTO_BYTES]);
 
 #define unpack_sig_z DILITHIUM_NAMESPACE(unpack_sig_z)
-void unpack_sig_z(polyvecl *z, const unsigned char sig[CRYPTO_BYTES]);
+int unpack_sig_z(polyvecl *z, const unsigned char sig[CRYPTO_BYTES]);
 
 #define unpack_sig_h DILITHIUM_NAMESPACE(unpack_sig_h)
 int unpack_sig_h(poly *h, unsigned int idx, const unsigned char sig[CRYPTO_BYTES]);

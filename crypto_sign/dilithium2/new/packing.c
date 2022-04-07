@@ -420,11 +420,12 @@ int unpack_sig(uint8_t c[SEEDBYTES],
 *                bit-packed signature
 *
 **************************************************/
-void unpack_sig_z(polyvecl *z, const unsigned char sig[CRYPTO_BYTES]) {
+int unpack_sig_z(polyvecl *z, const unsigned char sig[CRYPTO_BYTES]) {
   sig += SEEDBYTES;
   for (unsigned int i = 0; i < L; ++i) {
       polyz_unpack(&z->vec[i], sig + i * POLYZ_PACKEDBYTES);
   }
+  return 0;
 }
 
 /*************************************************
